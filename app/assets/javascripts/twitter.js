@@ -9,10 +9,10 @@ $(function() {
       type: 'GET',
       success: function(data) {
         console.log(data);
-        $('div#response').append(data["test"]);
+        $('div#response').html(data["tweet"]);
       },
       error: function(response) {
-        $('div#response').append("sdajax error");
+        $('div#response').html("user " + query + " not found");
       }
     });
   });
