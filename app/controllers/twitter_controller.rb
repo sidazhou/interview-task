@@ -3,7 +3,9 @@ class TwitterController < ApplicationController
   end
 
   def show
-    # @response = JSON.parse(RestClient.get(mailgun_message_url))
+    # https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=sidazhou&count=1
+    # doesnt work
+    @response = JSON.parse(RestClient.get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=sidazhou&count=1"))
 
     respond_to do |format|
       format.json do
