@@ -1,9 +1,8 @@
 $(function() {
 
 // http://stackoverflow.com/questions/4613310/how-to-call-external-url-in-jquery
-var twitterURL="https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=sidazhou";
 $.ajax({
-    url: twitterURL+"&callback=?",
+    url: "/show",
     type: 'GET',
     success: function (resp) {
         alert(resp);
