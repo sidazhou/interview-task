@@ -2,8 +2,7 @@ class TwitterController < ApplicationController
   def index
   end
 
-  def show #should be in api
-    #should be put somewhere else
+  def show
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = "NFlQOaQspcPdOBHbXOI2KuAIN"
       config.consumer_secret     = "5D6mzFQGK3oxN3rDzHZwHsST2kofGcKRoCGZ7ZRnUgHZXP2V1s"
@@ -15,11 +14,20 @@ class TwitterController < ApplicationController
       format.json do
         begin
           tweets = client.user_timeline(params[:query])
-          render json: { tweet: tweets.first.text }
+          render json: { tweets: tweets }
         rescue
-          render json: { tweet: '' }, status: 500
+          render json: { tweets: '' }, status: 500
         end
       end
     end
   end
 end
+
+
+
+# .attrs[:user][:name]
+# .attrs[:user][:screen_name]
+# .attrs[:user][:profile_image_url]
+# .attrs[:text]
+# .attrs[:text]
+# .attrs[:retweet_count]
