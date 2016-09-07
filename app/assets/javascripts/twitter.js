@@ -23,9 +23,9 @@ var highlight_html = function(html_blob, highlight_str) {
     return html_blob;
   }
 
-  var re = new RegExp(highlight_str, 'g'); // TODO: bugs out on \ and /
-
-  return html_blob.replace(re, "<span class='highlighted'>" + highlight_str + '</span>')
+  // crafted by a regex wizard using regex lookahead
+  var regex = new RegExp('(?![^<>]*>)(' + highlight_str + ')','ig');
+  return html_blob.replace(regex, "<span class='highlighted'>$1</span>")
 }
 
 var query_twitter = function(str_query) {
