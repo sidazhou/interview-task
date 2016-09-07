@@ -51,12 +51,35 @@ var update_response = function(html_blob) {
 var build_html = function (tweets) {
 
   var lis = tweets.map( function(tweet) {
-     return "<li class='list-group-item'>" + tweet.text + "</li>";
+     // ES6 syntax
+     return `<li class='list-group-item'>
+                <div class="row">
+                  <div class="col-md-2">
+                    <img src=${tweet.user.profile_image_url} align='right'/>
+                  </div>
+
+                  <div class="col-md-10 tweet-body">
+                    <div class="row">
+                      <span class='name'> ${tweet.user.name} </span>
+                      <span class='screen-name'> ${'@' + tweet.user.screen_name} </span>
+                    </div>
+
+                    <div class="row">
+                      ${tweet.text}
+                    </div>
+
+                    <div class="row">
+                      <span class="glyphicon glyphicon-refresh"></span> ${tweet.retweet_count}
+                    </div>
+                  </div>
+                </div>
+              </li>`
   }).join('')
 
   return `<ul class="list-group">
             ${lis}
           </ul>`
 }
+
 
 

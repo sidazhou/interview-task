@@ -3,6 +3,7 @@ class TwitterController < ApplicationController
   end
 
   def show
+    # pretend you didn't see these keys
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = "NFlQOaQspcPdOBHbXOI2KuAIN"
       config.consumer_secret     = "5D6mzFQGK3oxN3rDzHZwHsST2kofGcKRoCGZ7ZRnUgHZXP2V1s"
@@ -22,12 +23,3 @@ class TwitterController < ApplicationController
     end
   end
 end
-
-
-
-# .attrs[:user][:name]
-# .attrs[:user][:screen_name]
-# .attrs[:user][:profile_image_url]
-# .attrs[:text]
-# .attrs[:text]
-# .attrs[:retweet_count]

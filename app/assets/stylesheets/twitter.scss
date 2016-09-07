@@ -8,6 +8,29 @@ $sf-blue: #00A1E0;
 .container {
   margin-top: 50px ;
   max-width: 800px;
+
+  .filter.row {
+    background-color: $sf-blue;
+    border-radius: 5px;
+  }
+
+  .results.row {
+    margin-top: 20px;
+
+    li {
+      .tweet-body {
+        padding-left: 25px;
+
+        .name {
+          font-weight: bold;
+        }
+        .screen-name {
+          color: grey;
+          font-size: 11px;
+        }
+      }
+    }
+  }
 }
 
 input {
@@ -15,11 +38,3 @@ input {
   margin: 30px;
 }
 
-.filter.row {
-  background-color: $sf-blue;
-  border-radius: 5px;
-}
-
-.results.row {
-  margin-top: 20px;
-}
