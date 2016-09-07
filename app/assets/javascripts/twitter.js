@@ -49,9 +49,14 @@ var update_response = function(html_blob) {
 }
 
 var build_html = function (tweets) {
-  return tweets.map( function(tweet) {
-     return "<p>" + tweet.text + "</p>";
+
+  var lis = tweets.map( function(tweet) {
+     return "<li class='list-group-item'>" + tweet.text + "</li>";
   }).join('')
+
+  return `<ul class="list-group">
+            ${lis}
+          </ul>`
 }
 
 

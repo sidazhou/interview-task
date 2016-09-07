@@ -5,4 +5,21 @@ $sf-blue: #00A1E0;
   background-color: yellow;
 }
 
+.container {
+  margin-top: 50px ;
+  max-width: 800px;
+}
 
+input {
+  max-width: 250px;
+  margin: 30px;
+}
+
+.filter.row {
+  background-color: $sf-blue;
+  border-radius: 5px;
+}
+
+.results.row {
+  margin-top: 20px;
+}
