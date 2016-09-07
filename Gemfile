@@ -51,7 +51,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'jasmine-rails'
-  gem 'jasmine-jquery-rails'
+  # gem 'jasmine-jquery-rails'
 
 end
 
