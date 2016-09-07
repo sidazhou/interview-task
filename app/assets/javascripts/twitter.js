@@ -3,12 +3,17 @@ var tweets_shown; // global var
 
 
 $(function() {
-  // TODO: auto refresh at interval
+  // TODO: think about what happens when the user is using the filter and refresh happens
   query_twitter('salesforce');
+  var i = setInterval(function(){
+      query_twitter('salesforce');
+  }, 60*1000);
+
 
   $('#tweet_filter_query').keyup(function(){
     var str_filter_query = $('#tweet_filter_query').val();
 
+    // case sensitive
     tweets_shown = _.filter(tweets, function(el) { return el.text.includes(str_filter_query) })
 
     var html_blob = highlight_html(build_html(tweets_shown), str_filter_query)
@@ -29,6 +34,8 @@ var highlight_html = function(html_blob, highlight_str) {
 }
 
 var query_twitter = function(str_query) {
+  console.log('pinging twitter server...');
+
   $.ajax({
     url: "/show?query=" + str_query,
     type: 'GET',
