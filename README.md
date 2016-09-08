@@ -8,7 +8,7 @@ Demo
 ====
 
 - http://sd-temp.herokuapp.com
-- http://sd-temp.herokuapp.com/specs
+- localhost:3000/specs (with `rails server`, not available in production)
 
 
 Front End files
