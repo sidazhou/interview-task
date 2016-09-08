@@ -44,7 +44,7 @@ var handle_success = function(data) {
 var handle_keyup = function(){
   var str_query = $('#tweet_filter_query').val();
 
-  // mutes global tweets_shown
+  // mutates global tweets_shown
   filter_tweets(tweets, str_query);
 
   var html_blob = highlight_html(build_html(tweets_shown), str_query);
@@ -111,7 +111,7 @@ var get_tweets_shown = function() {
   return tweets_shown;
 }
 
-// mutes global tweets_shown
+// mutates global tweets_shown
 var filter_tweets = function(tweets, str_query) {
   tweets_shown = _.filter(tweets, function(el) { return el.text.includes(str_query) });
 }
